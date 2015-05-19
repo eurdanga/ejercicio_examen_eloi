@@ -8,7 +8,12 @@ $(".menu ").mouseenter(
 	$(this).children(":nth-child(2)").fadeIn();
 });
 
-$(".menu a:first-of-type").click(
+$('.menu').mouseleave(function(e) {
+	
+	$(this).children(":nth-child(2)").fadeOut();
+});
+
+$(".menu a").click(
 	function(e){
 	$(".menu").removeClass("current-menu-item");
 	$(this).parent().addClass("current-menu-item");
@@ -16,8 +21,26 @@ $(".menu a:first-of-type").click(
 
 $("#mobile-button").click(
 	function(e){
-	$(".menu-container").show();
+	$("#menu-container").show();
+	$("#mobile-button").hide();
+	$("#mobile-close").show();
+
+
 });
+
+$("#mobile-close").click(
+	function(e){
+	$("#menu-container").hide();
+	$("#mobile-button").show();
+	$("#mobile-close").hide();
+
+
+});
+
+
+
+
+
 
 });
 
